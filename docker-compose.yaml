@@ -7,15 +7,10 @@ services:
     restart: unless-stopped
     container_name: nginx-reverse-proxy
     ports:
-      - 8080:8080 # hello world nginx docker container itself
-      - 5000:5000 # container registry with tls within docker
+      - 80:80
+      - 443:443
 
-      # rancher
-      - 2000:2000
-      - 2001:2001
-
-      - 80:80 # hello world in kubernetes cluster
-      - 3080:3080 # api within kubernetes cluster
+      # kubernetes
       - 6000:6000 # audio route
       - 6001:6001 # video route
       - 6002:6002 # presence route
