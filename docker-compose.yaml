@@ -10,6 +10,10 @@ services:
       - 8080:8080 # hello world nginx docker container itself
       - 5000:5000 # container registry with tls within docker
 
+      # rancher
+      - 2000:2000
+      - 2001:2001
+
       - 80:80 # hello world in kubernetes cluster
       - 3080:3080 # api within kubernetes cluster
       - 6000:6000 # audio route
