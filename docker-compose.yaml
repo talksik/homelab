@@ -25,17 +25,15 @@ services:
     image: registry:2
     restart: unless-stopped
     container_name: registry
-    ports:
-      - 5001:5001 # using different port simply because nginx container needs the 5000 port
     volumes:
       - /mnt/registry:/var/lib/registry
     networks:
       - nginx
+
   rancher:
     image: rancher/rancher:latest
     restart: unless-stopped
     container_name: rancher
-    ports:
-      - 2000:80
-      - 2001:443
     privileged: true
+    networks:
+      - nginx
