@@ -5,10 +5,16 @@ services:
   nginx:
     image: nginx:latest
     restart: unless-stopped
-    container_name: caddy
+    container_name: nginx-reverse-proxy
     ports:
-      - 5000:5000 # container registry
-      - 80:80 # kubernetes - hello world
+      - 8080:8080 # hello world nginx docker container itself
+      - 5000:5000 # container registry with tls within docker
+
+      - 80:80 # hello world in kubernetes cluster
+      - 3080:3080 # api within kubernetes cluster
+      - 6000:6000 # audio route
+      - 6001:6001 # video route
+      - 6002:6002 # presence route
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./src/index.html:/usr/share/nginx/html/index.html
@@ -20,7 +26,7 @@ services:
     restart: unless-stopped
     container_name: registry
     ports:
-      - 5000:5000
+      - 5001:5001 # using different port simply because nginx container needs the 5000 port
     volumes:
       - /mnt/registry:/var/lib/registry
     networks:
