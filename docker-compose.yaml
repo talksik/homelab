@@ -17,6 +17,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./src/index.html:/usr/share/nginx/html/index.html
+      - /etc/letsencrypt/live/flowy.live:/etc/letsencrypt/live/flowy.live
     networks:
       - nginx
 
