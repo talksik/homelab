@@ -34,6 +34,7 @@ services:
     image: rancher/rancher:latest
     restart: unless-stopped
     container_name: rancher
+    ports:
+      - 2000:80
+      - 2001:443
     privileged: true
-    networks:
-      - nginx
