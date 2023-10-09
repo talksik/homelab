@@ -41,3 +41,14 @@ services:
       - 2000:80
       - 2001:443
     privileged: true
+
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - /mnt/postgresql/data:/var/lib/postgresql/data
