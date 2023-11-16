@@ -1,0 +1,13 @@
+127.0.0.1	localhost
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+
+127.0.1.1	jupiter
+
+# configurations for dnamasq
+192.168.50.62   homelab-1
+192.168.50.194  homelab-2
+192.168.50.92   lg-gram
+192.168.50.45   dns-server
+
