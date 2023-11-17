@@ -12,3 +12,7 @@ Note: we are not using pi-hole as a DHCP server. We leave this to the router, al
 
 ### Discoveries
 1. Do not have a secondary DNS server in router config. This makes pi-hole local DNS not work.
+2. Do not use `.local` for domain in local DNS. You will see a warning when using dig that `.local` is reserved for mDNS.
+
+## Container registry
+For saving docker images.
