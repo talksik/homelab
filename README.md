@@ -15,4 +15,13 @@ Note: we are not using pi-hole as a DHCP server. We leave this to the router, al
 2. Do not use `.local` for domain in local DNS. You will see a warning when using dig that `.local` is reserved for mDNS.
 
 ## Container registry
-For saving docker images.
+For saving docker images. We run a private registry.
+
+_Ask Arjun to add another user for you._
+username: talksik
+password: (it's typical arjun)
+
+## Reverse-proxy
+We run our reverse-proxy on homelab1 or talksik-homelab-main.
+
+The current configuration is at `talksik@homelab1.home:/etc/nginx/nginx.conf` as one would expect. However, we have a (likely stale) copy in `./reverse-proxy`.
