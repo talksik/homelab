@@ -103,8 +103,8 @@ restart_docker_engine () {
 
   # On Linux, restart through "systemd"
   elif [ "$(uname)" == "Linux" ] && is_program_installed "systemctl"; then
-    sudo systemctl stop docker.service || true
-    sudo systemctl start docker.service
+    sudo systemctl stop snap.docker.dockerd.service || true
+    sudo systemctl start snap.docker.dockerd.service
 
   # Other platforms are not supported
   else
