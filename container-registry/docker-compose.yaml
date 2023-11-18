@@ -11,7 +11,8 @@ services:
       REGISTRY_AUTH_HTPASSWD_REALM: Registry
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/registry.password
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
-      REGISTRY_HTTP_HOST: https://registry.flowy.live:5443
+      # REGISTRY_HTTP_HOST: https://registry.flowy.live:5443
+      # REGISTRY_HTTP_RELATIVEURLS: true
     volumes:
       - ./auth:/auth
       - ./data:/data
