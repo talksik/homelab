@@ -30,3 +30,7 @@ We run our reverse-proxy on homelab1 or talksik-homelab-main.
 
 The current configuration is at `talksik@homelab1.home:/etc/nginx/nginx.conf` as one would expect. However, we have a (likely stale) copy in `./reverse-proxy`.
 
+## Kubernetes
+Using k3s. Lightweight, easy system service.
+
+Make sure you have static ip for each node.
