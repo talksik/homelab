@@ -34,3 +34,8 @@ The current configuration is at `talksik@homelab1.home:/etc/nginx/nginx.conf` as
 Using k3s. Lightweight, easy system service.
 
 Make sure you have static ip for each node.
+
+### Grafana and prometheus
+Using this guide: https://k21academy.com/docker-kubernetes/prometheus-grafana-monitoring/
+
+
