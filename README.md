@@ -10,12 +10,16 @@ _Password stored in firefox._
 
 Note: we are not using pi-hole as a DHCP server. We leave this to the router, although we should likely use the pi-hole server for this.
 
-### Discoveries
+## Discoveries
 1. Do not have a secondary DNS server in router config. This makes pi-hole local DNS not work.
 2. Do not use `.local` for domain in local DNS. You will see a warning when using dig that `.local` is reserved for mDNS.
 
+_NOTE: you will notice that ports are abnormal. This is because Cox won't allow opening port 80 and 443 on residential routers. Check router.asus.com port forwarding settings to see where services live._
+
 ## Container registry
 For saving docker images. We run a private registry.
+
+Use `docker login registry.flowy.live:5443`
 
 _Ask Arjun to add another user for you._
 username: talksik
