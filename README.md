@@ -43,3 +43,13 @@ Make sure you have static ip for each node.
 Using this guide: https://k21academy.com/docker-kubernetes/prometheus-grafana-monitoring/
 
 
+## SSL Certificates
+The way it all works in baby terms is that you tell your DNS server like domains.google.com to use an a record for your domain to go to an IP address.
+
+Then, presuming you have a nginx server running and portforwarding works, certbot will hit your domain (say `flowy.live`), and make sure that it hit this current server (or something like that).
+
+And then, it generates a certificate with a certificate authority and installs in some folder within the linux computer.
+
+Then you point to that ssl certificate in nginx config for different endpoints.
+
+run a cronjob on the system that runs the nginx server as mentioned [here](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/) to auto-renew certificate(s) when they are about to expire.
