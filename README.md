@@ -27,7 +27,7 @@ password: (it's typical arjun)
 
 Used [this](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-20-04) guide to get a private docker registry running, in docker.
 
-Given that the reverse-proxy works and domain works, hitting `https://registry.flowy.live/v2/_catalog` and entering credentials should return list of repositories.
+Given that the reverse-proxy works and domain works, hitting `https://registry.flowy.live:5443/v2/_catalog` and entering credentials should return list of repositories.
 
 ## Reverse-proxy
 We run our reverse-proxy on homelab1 or talksik-homelab-main.
