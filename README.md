@@ -32,13 +32,18 @@ Given that the reverse-proxy works and domain works, hitting `https://registry.f
 ## Reverse-proxy
 We run our reverse-proxy on homelab1 or talksik-homelab-main.
 
-The current configuration is at `talksik@homelab1.home:/etc/nginx/nginx.conf` as one would expect. However, we have a (likely stale) copy in `./reverse-proxy`.
+The current configuration is at `talksik@homelab1.home:/etc/nginx/nginx.conf` as one would expect.
+
+Make updates to the one in this repo, and then copy to machine.
 
 Update by doing the following:
 ```sh
 set -e
 set -o pipefail
 
+git pull
+
+sudo mv ./reverse-proxy/nginx.conf /etc/nginx/nginx.conf
 sudo nginx -t
 sudo service nginx restart
 ```
