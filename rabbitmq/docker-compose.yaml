@@ -1,0 +1,15 @@
+version: '3.3'
+networks:
+  rabbitmq:
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=testpassword
+    ports:
+      - 4050:15672
+    networks:
+      - rabbitmq
